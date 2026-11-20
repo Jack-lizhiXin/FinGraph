@@ -16,6 +16,25 @@
 | [Amazon Review/GADBench](https://github.com/squareRoot3/GADBench) | 评论或评论者为节点（具体版本校核）；边为评论关联；节点；评论相关欺诈标签；不是金融欺诈 | GADBench 下载；许可：**待核** | 作为跨场景对照，不能代替金融效度；不同论文版本的同名数据构图不同 |
 | [YelpChi/GADBench](https://github.com/squareRoot3/GADBench) | 评论/评论者节点；多关系评论关联边，按版本核对；节点；欺诈评论节点标签；不是银行交易异常 | GADBench 下载；许可：**待核** | 尤其需要固定关系类型、邻接展开与训练标签泄漏控制 |
 
+## 动态图综述新增资源
+
+[逐资源选型与时间边界](dynamic-finance.md) · [全量 JSON](index.json) · [全量 CSV](index.csv)
+
+| 资源 | 评测单位 | 标签和适用边界 |
+| --- | --- | --- |
+| [FiGraph](<https://github.com/XiaoguangWang23/FiGraph>) | 上市公司×年 | 上市公司节点的年度 Label。同一企业跨年可改变标签，其余背景节点不属于分类目标。 年报披露通常晚于会计期末；事前预测需确定文本、财务指标、关系和处罚标签各自可用日期。背景节点不可充作正常公司。 |
+| [Elliptic++](<https://github.com/git-disl/EllipticPlusPlus>) | 交易节点或地址节点，分开评分 | 交易和地址分别有 illicit、licit、unknown 标签。地址是链上标识，同一个人可能使用多个地址。 Elliptic 与 Elliptic++ 共享交易样本。按同源数据记录；未知类单列，复用全期地址邻域统计前需检查未来信息。 |
+| [SAML-D](<https://github.com/BOztasUK/Anti_Money_Laundering_Transaction_Data_SAML-D>) | 交易事件（边） | 可疑/正常是生成器逐笔给出的标签，另有场景类型。 场景字段会泄露目标。时间留出与场景留出回答不同问题；保留重复交易。论文与更新版分别记录版本和阳性率。 |
+| [Bank Account Fraud (BAF) Dataset Suite](<https://github.com/feedzai/bank-account-fraud>) | 开户申请（表格） | 目标是该申请是否欺诈；各变体用受控抽样改变偏差。 同源变体可检验月份漂移、群体误报差距或特征基线，不可算作六家银行外部验证；按月留出。 |
+| [SynthAML](<https://doi.org/10.6084/m9.figshare.c.6504421.v1>) | 告警（关联交易序列） | 告警结果为上报主管机关或结案；标签对应处置决策。 同一告警的交易留在同一折内；限定触发时点可见历史，并记录处置结果何时可知。上报不等于违法已证实。 |
+| [PaySim](<https://github.com/EdgarLopezPhD/PaySim>) | 交易事件（边） | isFraud 是模拟欺诈目标；isFlaggedFraud 是规则告警输出，两者语义不同。 识别业务可见时点；评分时交易后余额可能尚不可得。避免用告警结果或生成器主体编码直接预测标签。 |
+| [Credit Card Fraud Detection Handbook 交易模拟器](<https://fraud-detection-handbook.github.io/fraud-detection-handbook/Chapter_3_GettingStarted/SimulatedDataset.html>) | 支付事件（二部图边） | TX_FRAUD 是模拟欺诈；TX_FRAUD_SCENARIO 标记注入情景。 情景号是生成真值。滚动特征需严格截止于当前交易；终端历史标签须经历设定的调查滞后后才可用。 |
+| [FinCEN Files transactions map（ICIJ 公开子集）](<https://www.icij.org/investigations/fincen-files/download-fincen-files-transaction-data/>) | 案例或机构关系（观察证据） | 入样表示被机构报为可疑且向公众披露；没有完整正常组，也没有刑事定罪标签。 无法估算完整金融系统中的患病率、召回率或误报率；不得因机构出现在报告中就赋予违法标签。 |
+| [Bitcoin Address Behavior Dataset (BABD-13)](<https://github.com/Y-Xiang-hub/Bitcoin-Address-Behavior-Analysis>) | 地址（行为类型） | 13 类比特币地址行为类型；功能类别与“非法/合法”的二分标签语义不同。 全观察期构造的地址统计无法直接用于在线识别，需重算截止时点特征。不能把一类服务的全部地址当成违法真值。 |
+| [MoMTSim Synthetic Mobile Money Transaction Dataset](<https://data.mendeley.com/datasets/zhj366m53p/2>) | 交易事件（边） | 逐笔欺诈/正常来自预设规则，各配置的欺诈比例差异很大。 二配置共享模拟器及公开的随机种子；优先报告各自阳性率和告警预算，部署前检验交易后余额可见性。 |
+| [FinFraudBench](<https://arxiv.org/abs/2608.15177>) | 交易节点 | 仅交易节点有来源表欺诈标签，其他实体提供关系上下文。 作者提供随机划分，主结果在均衡小测试集上计算；保留自然基率的完整测试集另列。在线主张需重建截至评分时点的图并重新按时间划分。 |
+| [BitcoinHeist ransomware address dataset](<https://archive.ics.uci.edu/dataset/526/bitcoinheist%2Bransomware%2Baddress%2Bdataset>) | 地址×日的特征记录 | 已知勒索家族名或 white。white 的官方定义是未被识别为勒索地址；观察期内的所有活动合法性未知。 分开报告时间外推和地址是否首次出现；全天图提取的特征只能用于当日观察窗结束后的判断，采样时还过滤了小额边。 |
+
 ## 核心对齐原则
 
 - **交易节点 ≠ 交易边。** Elliptic 节点是交易，TransXion/AMLWorld 账户图中交易为边；即便都称「transaction detection」，不能直接共用一个 AUROC 排名。
