@@ -1,10 +1,22 @@
 # FinGraph 金融图异常检测研究社区
 
-FinGraph collects research on **who or what is being scored, which labels are known at training time, and how financial graph detectors are evaluated**. Students and researchers can browse the [English paper titles in the catalogue](catalog/README.md), suggest a paper through an issue, or contribute a reproducible comparison. Chinese or English contributions are welcome.
+复旦大学金融科技研究院由柴洪峰院士领衔，以计算机科学技术为基础，联合金融等学科开展研究。金融欺诈识别、知识图谱和金融数据安全共享是研究院的研究方向。[研究院简介](https://fintech.fudan.edu.cn/yjygk.htm)
 
-围绕账户、交易与团伙，按评分对象、训练标签、时间可见性和调查预算组织证据。截至 2026-11-20，全库 **203 篇**，其中 **191 篇**发表于 2022–2026 年，**89 篇**列入综述核心矩阵。论文树含 **7 个主分支、22 个问题**，另有 **23 项数据资源**与 **50 份中文阅读卡**，覆盖 **49 篇不同论文**。
+FinGraph 面向国内外研究者，汇集金融图异常检测的论文、数据和评测方法。我们关心一个实际问题：面对不断发生的交易，当已核实的异常很少、每天能复核的线索有限时，哪些账户、交易或团伙值得优先调查？
 
-[综述写作底稿](survey/survey-design.md) · [核心方法矩阵](survey/core-matrix.md) · [课题三研究内容二路线图](survey/roadmap.md)
+**For international readers.** FinGraph brings together work by researchers at the Institute of Financial Technology, Fudan University, and the wider research community. We study how to detect suspicious activity in evolving transaction networks when verified labels are scarce and investigators can review only a limited number of alerts. Contributions in English or Chinese are welcome. [Paper catalogue](catalog/README.md) · [Contributing](CONTRIBUTING.md)
+
+## 代表性工作与在研综述
+
+- **CR-Aug · 少标签图异常检测（KDD 2026）**。当训练时只有少量节点被确认为正常，复旦团队根据不同图社区的风险特征生成异常样本，帮助模型识别可疑节点。[论文](https://doi.org/10.1145/3770855.3818003) · [中文精读](notes/cr-aug.md)
+- **TransXion · 合成交易网络与反洗钱评测（KDD 2026）**。复旦与北京大学研究者共同构建了包含约 5 万个实体、300 万笔合成交易的基准，可用来检验模型能否发现偏离账户日常行为的资金往来。[论文](https://doi.org/10.1145/3770855.3817550) · [数据与代码](https://github.com/chaos-max/TransXion)
+- **《动态图异常检测方法的研究与应用：面向金融交易网络的视角》 · 综述筹备中**。我们按检测对象、交易发生时可见的信息、标签来源和复核名额整理国内外证据，说明哪些方法可以公平比较。[写作底稿](survey/survey-design.md) · [核心文献比较矩阵](survey/core-matrix.md)
+
+## 文献与数据导航
+
+截至 2026-11-20，全库 **203 篇**，其中 **191 篇**发表于 2022–2026 年，**89 篇**列入综述核心矩阵。论文树含 **7 个主分支、22 个问题**，另有 **23 项数据资源**与 **50 份中文阅读卡**，覆盖 **49 篇不同论文**。
+
+[课题三研究内容二路线图](survey/roadmap.md)
 
 | 我想做什么 | 从这里开始 |
 | --- | --- |
@@ -21,11 +33,6 @@ FinGraph collects research on **who or what is being scored, which labels are kn
 ### 本期共同问题
 
 在同一张交易图上，历史交易本身已经提供了多少信息？加入上游邻居后，有限的告警复核名额能多发现多少已知异常？双类标签与仅正常标签的实验共享测试对象，各自在同一标签条件下与简单模型比较。
-
-### 两项团队公开工作
-
-- [CR-Aug](notes/cr-aug.md) 面向少量正常标签已知的节点检测，用社区差异指导伪异常生成。
-- [TransXion](catalog/README.md#p-transxion) 提供带时间戳的合成交易图和边级标签，适合后续研究交易告警及跨生成器泛化。
 
 ### 两个本地命令
 
