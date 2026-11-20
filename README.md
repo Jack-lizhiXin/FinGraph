@@ -2,14 +2,17 @@
 
 FinGraph collects research on **who or what is being scored, which labels are known at training time, and how financial graph detectors are evaluated**. Students and researchers can browse the [English paper titles in the catalogue](catalog/README.md), suggest a paper through an issue, or contribute a reproducible comparison. Chinese or English contributions are welcome.
 
-围绕账户、交易与团伙识别，本库把论文、训练标签条件、数据评测和模型复现连在一起。两条核心研究线分别是有监督识别、半监督与稀缺标签。截至 2026 年 11 月 20 日，合并索引收录 **73 篇论文**，分为 **6 个主分支、16 个研究问题**。启动包收录 42 篇，专题增补包收录 66 篇，其中 35 篇相同。两包合并后保留 11 项数据资源和 18 份阅读卡，覆盖 17 篇论文。本轮按主题选取代表性文献。
+围绕账户、交易与团伙，按评分对象、训练标签、时间可见性和调查预算组织证据。截至 2026-11-20，全库 **203 篇**，其中 **191 篇**发表于 2022–2026 年，**89 篇**列入综述核心矩阵。论文树含 **7 个主分支、22 个问题**，另有 **23 项数据资源**与 **50 份中文阅读卡**，覆盖 **49 篇不同论文**。
+
+[综述写作底稿](survey/survey-design.md) · [核心方法矩阵](survey/core-matrix.md) · [课题三研究内容二路线图](survey/roadmap.md)
 
 | 我想做什么 | 从这里开始 |
 | --- | --- |
 | 了解全貌或搜索一个方法 | [论文树](docs/tree.md) · [分支索引与原文](catalog/README.md) · [精读卡目录](notes/README.md) · [JSON](catalog/papers.json) · [CSV](catalog/papers.csv) |
+| 准备撰写动态图金融综述 | [综述工作区](survey/README.md) · [候选文献 CSV](survey/candidates.csv) · [筛选协议](survey/protocol.md) |
 | 第一次参加讨论 | [四次入门阅读](docs/reading-path.md) · [首场周会议程草案](meetings/kickoff.md) |
 | 学会区分训练与评测 | [十分钟运行一个节点任务](examples/README.md) · [Elliptic 首轮实验协议](protocols/elliptic-node-pilot.md) · [运行真实 CSV 的入口](pilots/elliptic/README.md) |
-| 查公开数据与检索证据 | [11 项公开数据资源](datasets/README.md) · [新论文检索日志](research/search-log-2026-11-20.md) · [关键论文证据比较矩阵](research/evidence-matrix-2026-11-20.md) · [学生可执行研究问题](research/research-questions-and-operations.md) |
+| 查公开数据与检索证据 | [金融图数据资源](datasets/README.md) · [新论文检索日志](research/search-log-2026-11-20.md) · [关键论文证据比较矩阵](research/evidence-matrix-2026-11-20.md) · [学生可执行研究问题](research/research-questions-and-operations.md) |
 | 接手复现 | [模型登记](models/README.md) · [BWGNN](models/bwgnn.md) · [GGAD](models/ggad.md) · [CR-Aug](models/cr-aug.md) |
 | 添加一篇、组织周会或维护检索 | [贡献说明](CONTRIBUTING.md) · [检索范围和更新方法](docs/search.md) · [周会记录](meetings/README.md) · [本地运行与维护](docs/handoff.md) |
 
