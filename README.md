@@ -1,16 +1,15 @@
 # FinGraph 金融图异常检测研究社区
 
-复旦大学金融科技研究院由柴洪峰院士领衔，以计算机科学技术为基础，联合金融等学科开展研究。金融欺诈识别、知识图谱和金融数据安全共享是研究院的研究方向。[研究院简介](https://fintech.fudan.edu.cn/yjygk.htm)
+复旦大学金融科技研究院以人工智能和计算机技术为基础，围绕金融欺诈识别、金融知识图谱构建和金融数据安全共享开展研究。[研究院简介](https://fintech.fudan.edu.cn/yjygk.htm)
 
 FinGraph 面向国内外研究者，汇集金融图异常检测的论文、数据和评测方法。我们关心一个实际问题：面对不断发生的交易，当已核实的异常很少、每天能复核的线索有限时，哪些账户、交易或团伙值得优先调查？
 
-**For international readers.** FinGraph brings together work by researchers at the Institute of Financial Technology, Fudan University, and the wider research community. We study how to detect suspicious activity in evolving transaction networks when verified labels are scarce and investigators can review only a limited number of alerts. Contributions in English or Chinese are welcome. [Paper catalogue](catalog/README.md) · [Contributing](CONTRIBUTING.md)
+**For international readers.** The Institute of Financial Technology at Fudan University applies AI and computer science to fraud detection, financial knowledge graphs, and secure data sharing. FinGraph brings together research from Fudan and the wider community on anomaly detection in financial networks. We study how to detect suspicious activity in evolving transaction networks when verified labels are scarce and investigators can review only a limited number of alerts. Contributions in English or Chinese are welcome. [Paper catalogue](catalog/README.md) · [Contributing](CONTRIBUTING.md)
 
-## 代表性工作与在研综述
+## 已发表的代表性论文
 
-- **CR-Aug · 少标签图异常检测（KDD 2026）**。当训练时只有少量节点被确认为正常，复旦团队根据不同图社区的风险特征生成异常样本，帮助模型识别可疑节点。[论文](https://doi.org/10.1145/3770855.3818003) · [中文精读](notes/cr-aug.md)
+- **CR-Aug · 少标签图异常检测（KDD 2026）**。当训练时只有少量节点被确认为正常，复旦团队根据不同图社区的风险特征生成模拟异常样本，帮助模型识别可疑节点。[论文](https://doi.org/10.1145/3770855.3818003) · [中文精读](notes/cr-aug.md)
 - **TransXion · 合成交易网络与反洗钱评测（KDD 2026）**。复旦与北京大学研究者共同构建了包含约 5 万个实体、300 万笔合成交易的基准，可用来检验模型能否发现偏离账户日常行为的资金往来。[论文](https://doi.org/10.1145/3770855.3817550) · [数据与代码](https://github.com/chaos-max/TransXion)
-- **《动态图异常检测方法的研究与应用：面向金融交易网络的视角》 · 综述筹备中**。我们按检测对象、交易发生时可见的信息、标签来源和复核名额整理国内外证据，说明哪些方法可以公平比较。[写作底稿](survey/survey-design.md) · [核心文献比较矩阵](survey/core-matrix.md)
 
 ## 文献与数据导航
 
@@ -21,7 +20,7 @@ FinGraph 面向国内外研究者，汇集金融图异常检测的论文、数�
 | 我想做什么 | 从这里开始 |
 | --- | --- |
 | 了解全貌或搜索一个方法 | [论文树](docs/tree.md) · [分支索引与原文](catalog/README.md) · [精读卡目录](notes/README.md) · [JSON](catalog/papers.json) · [CSV](catalog/papers.csv) |
-| 准备撰写动态图金融综述 | [综述工作区](survey/README.md) · [候选文献 CSV](survey/candidates.csv) · [筛选协议](survey/protocol.md) |
+| 准备撰写动态图金融综述 | [综述工作区](survey/README.md) · [候选文献 CSV](survey/candidates.csv) · [核心文献比较矩阵](survey/core-matrix.md) · [筛选协议](survey/protocol.md) |
 | 第一次参加讨论 | [四次入门阅读](docs/reading-path.md) · [首场周会议程草案](meetings/kickoff.md) |
 | 学会区分训练与评测 | [十分钟运行一个节点任务](examples/README.md) · [Elliptic 首轮实验协议](protocols/elliptic-node-pilot.md) · [运行真实 CSV 的入口](pilots/elliptic/README.md) |
 | 查公开数据与检索证据 | [金融图数据资源](datasets/README.md) · [新论文检索日志](research/search-log-2026-11-20.md) · [关键论文证据比较矩阵](research/evidence-matrix-2026-11-20.md) · [学生可执行研究问题](research/research-questions-and-operations.md) |
